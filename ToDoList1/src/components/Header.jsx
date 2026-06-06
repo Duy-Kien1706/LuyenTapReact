@@ -1,3 +1,4 @@
+import {Link} from "react-router-dom"
 export default function Header() {
     return (
         <nav  style = {{
@@ -13,9 +14,9 @@ export default function Header() {
                 <div className ="collapse navbar-collapse" id="navbarNav">
                     <ul className ="navbar-nav">
                         <li  className ="nav-item">
-                            <a style = {{
+                            <Link style = {{
                         color: "white"
-                    }} className ="nav-link active" aria-current="page" href="#">Người Dùng</a>
+                    }} className ="nav-link active" aria-current="page" to={"/"}>Người Dùng</Link>
                         </li>
                         <li  className ="nav-item">
                             <a style = {{

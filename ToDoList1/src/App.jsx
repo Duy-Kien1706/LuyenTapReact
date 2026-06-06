@@ -27,13 +27,18 @@ const handleDeleteUser = (id) => {
 };
 
 
+const addUsers = (user) =>{
+  setUsers([...users,{id : users.length + 1, ...user}])
+}
+
+
 
   return (
     <>
       <Routes>
         <Route path="/" element={<Protected isLogged={true} />}>
-          <Route path="/" element={<UserList users={users} onDelete={handleDeleteUser} />}></Route>
-          <Route path="/users/add" element={<UserCreate />}></Route>
+          <Route index element={<UserList users={users} onDelete={handleDeleteUser} />}></Route>
+          <Route path="users/add" element={<UserCreate addUsers = {addUsers}/>}></Route>
         </Route>
         <Route path="/login" element={<Login />}></Route>
       </Routes>

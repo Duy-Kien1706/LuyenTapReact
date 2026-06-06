@@ -1,4 +1,7 @@
+import {useNavigate} from "react-router-dom";
 export default function UserList( { users,onDelete } ) {
+
+    const navigate = useNavigate();
     return (
         <>
             <div className="d-flex justify-content-between align-items-start">
@@ -7,11 +10,12 @@ export default function UserList( { users,onDelete } ) {
                     <span>Tổng cộng: {users.length} người dùng</span>
                 </div>
                 <button style=
-                    {{ backgroundColor: "#4f46e5", padding: "8px 12px", borderRadius: "6px", border: "none", color: "white" }}>+ Thêm người dùng</button>
+                    {{ backgroundColor: "#4f46e5", padding: "8px 12px", borderRadius: "6px", border: "none", color: "white" }}
+                    onClick = {()=>{navigate("/users/add")}}>+ Thêm người dùng</button>
             </div>
 
 
-            {/* Danh sách người dùng */}
+  
             <table className="table border">
                 <thead>
                     <tr>
