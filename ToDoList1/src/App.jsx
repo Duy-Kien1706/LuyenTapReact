@@ -11,21 +11,28 @@ import data from "./data/data.json"
 
 function App() {
 
-    const [users,setUsers] = useState(data);
+  const [ users, setUsers ] = useState( data );
 
 
-    const handleDeleteUser = (id) => {
-        const newUsers = users.filter(user => user.id !== id);
-        setUsers(newUsers);
-    };
+const handleDeleteUser = (id) => {
+    let newUsers = [];
+
+    for (let i = 0; i < users.length; i++) {
+        if (users[i].id !== id) {
+            newUsers.push(users[i]);
+        }
+    }
+
+    setUsers(newUsers);
+};
 
 
 
   return (
     <>
       <Routes>
-        <Route path = "/" element = {<Protected isLogged = {true}/>}>
-          <Route path = "/" element={<UserList users = {users} onDelete = {handleDeleteUser}/>}></Route>
+        <Route path="/" element={<Protected isLogged={true} />}>
+          <Route path="/" element={<UserList users={users} onDelete={handleDeleteUser} />}></Route>
           <Route path="/users/add" element={<UserCreate />}></Route>
         </Route>
         <Route path="/login" element={<Login />}></Route>
