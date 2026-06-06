@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "fullName": "Nguyễn Văn An",
+        "email": "an@gmail.com",
+        "phoneNumber": "0901234567",
+        "role": "ADMIN"
+    },
+    {
+        "id": 2,
+        "fullName": "Trần Thị Bình",
+        "email": "binh@gmail.com",
+        "phoneNumber": "0912345678",
+        "role": "USER"
+    },
+    {
+        "id": 3,
+        "fullName": "Lê Văn Cường",
+        "email": "cuong@gmail.com",
+        "phoneNumber": "0923456789",
+        "role": "USER"
+    },
+    {
+        "id": 4,
+        "fullName": "Phạm Thị Dung",
+        "email": "dung@gmail.com",
+        "phoneNumber": "0934567890",
+        "role": "EDITOR"
+    },
+    {
+        "id": 5,
+        "fullName": "Hoàng Văn Em",
+        "email": "em@gmail.com",
+        "phoneNumber": "0945678901",
+        "role": "USER"
+    }
+]
