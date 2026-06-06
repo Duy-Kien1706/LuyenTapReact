@@ -1,4 +1,4 @@
-export default function UserList( { users } ) {
+export default function UserList( { users,onDelete } ) {
     return (
         <>
             <div className="d-flex justify-content-between align-items-start">
@@ -41,10 +41,10 @@ export default function UserList( { users } ) {
                                         <button
                                             className="btn btn-danger"
                                             data-bs-toggle="modal"
-                                            data-bs-target="#deleteModal">Xóa</button>
+                                            data-bs-target={`#deleteModal-${user.id}`}>Xóa</button>
                                         <div
                                             className="modal fade"
-                                            id="deleteModal"
+                                            id={`deleteModal-${user.id}`}
                                             tabIndex="-1"
                                             aria-hidden="true"
                                         >
@@ -80,6 +80,7 @@ export default function UserList( { users } ) {
                                                             type="button"
                                                             className="btn btn-danger"
                                                             data-bs-dismiss="modal"
+                                                            onClick = {()=>onDelete(user.id)}
                                                         >
                                                             confirm
                                                         </button>
